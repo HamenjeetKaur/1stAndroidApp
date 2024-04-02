@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.sql.ResultSet
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,13 +19,27 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+
+        var count=0
         val  textView = findViewById(R.id.text1) as TextView
         val button1 = findViewById(R.id.b1) as Button
+        val button2 = findViewById(R.id.b2) as Button
 
+
+        fun reset(){
+            count=0
+        }
         button1.setOnClickListener {
-            textView.text = "Welcome!"
+            textView.text ="Welcome! Clicked "+count+" times."
+            count++
         }
 
+        button2.setOnClickListener{
+            reset()
+            textView.text ="Welcome! Clicked "+count+" times."
+        }
 
     }
 }
