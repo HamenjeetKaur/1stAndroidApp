@@ -32,8 +32,9 @@ class MainActivity : AppCompatActivity() {
             count=0
         }
         button1.setOnClickListener {
-            textView.text ="Welcome! Clicked "+count+" times."
             count++
+            textView.text ="Welcome! Clicked "+count+" times."
+
         }
 
         button2.setOnClickListener{
